@@ -1,0 +1,44 @@
+version: '3'
+
+networks:
+  lo:
+    external: true
+    
+services:
+  consumer_service:
+    build:
+      context: ./consumer
+      dockerfile: Dockerfile
+    container_name: consumer_c
+  
+  add_service:
+    build:
+      context: ./add_p
+      dockerfile: Dockerfile
+    container_name: add_p
+    
+      
+  del_service:
+    build:
+      context: ./del_p
+      dockerfile: Dockerfile
+    container_name: del_p
+   
+   
+  update_service:
+    build:
+      context: ./update_p
+      dockerfile: Dockerfile
+    container_name: update_p  
+  
+       
+  health_service:
+    build:
+      context: ./hel_p
+      dockerfile: Dockerfile
+    container_name: health_p
+  
+  
+    
+
+
